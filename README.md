@@ -1,1 +1,1 @@
-# NASImageNet
+# NAS-ImageNet
