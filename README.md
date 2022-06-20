@@ -1,1 +1,1 @@
-# NAS-ImageNet
+# NAS with Reinforcement Learning
