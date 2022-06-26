@@ -18,45 +18,32 @@ pip install -r requirements.txt
 ## Project files
 
 * __model.py__
-	* includes a CNN model which applies 2D convolution over the input.
-	* returns forward pass output. 
+	* Includes a CNN model which applies 2D convolution over the input.
+	* Returns forward pass output. 
 * __controller.py__
-	* this file has the Agent which is driven by a neural network architecture.
-	* agent has Long Short-Term Memory (LSTM) network. 
+	* The Agent which is driven by a neural network architecture.
+	* Agent has Long Short-Term Memory (LSTM) network. 
 * __policy_gradient.py__
 	* Aim of this policy build the Convulutional Neural Network model and compare the results with Reinforcement Learning algorithm 
-	* CNN model trainded through play_episode method; during the training 
-	* play_episode method retuns episode logits from Agent, reward(accuracy) and sum of weighted episode logits.
-	* calculate policy loss and entropy with logits and weighted logits probabilities which gathered through batches. 
-	* clear gradients
-	* backpropagation
-	* update the parameters
-	* list avarge total rewards and entropy for each epoch
+	* CNN model trainded through play_episode method
+	* Play_episode method retuns episode logits from Agent, reward(accuracy) and sum of weighted episode logits.
+	* Calculate_loss method calculates and returns policy loss and entropy with logits and weighted logits probabilities within the epoches. 
+	* Clearing gradients
+	* Backpropagation
+	* Update the parameters
+	* List avarge total rewards and entropy for each epoch
 * __train.py__
-	* includes parameters # of epochs, learning rate, batch size, # of hiden nodes etc.
-	* downloads train and test dataset, and passes it with the config parameters to the model.
+	* Includes hyperparameters # of epochs, learning rate, batch size, # of hiden nodes etc.
+	* Downloads train and test dataset, and passes it with the config parameters to the model.
 
 
 ## Training
 
-To train the model in the paper, run this command:
+Hyperparameters are defined within the config. To train the model in the paper, run this command:
 
 ```train
-python train.py --input-data <path_to_data> --alfa 5 --beta 20
+python train.py
 ```
-
->📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
-
-## Evaluation
-
-To evaluate my model on MiniImageNet, run:
-
-```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
-```
-
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
-
 
 ## Results
 
