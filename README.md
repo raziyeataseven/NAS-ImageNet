@@ -16,47 +16,33 @@ pip install -r requirements.txt
 >Some information about the data and where to get...
 
 ## Project files
-
-* __model.py__
-	* includes a CNN model which applies 2D convolution over the input.
-	* returns forward pass output. 
-* __controller.py__
-	* this file has the Agent which is driven by a neural network architecture.
-	* agent has Long Short-Term Memory (LSTM) network. 
+ 
 * __policy_gradient.py__
-	* Aim of this policy build the Convulutional Neural Network model and compare the results with Reinforcement Learning algorithm 
-	* CNN model trainded through play_episode method; during the training 
-	* play_episode method retuns episode logits from Agent, reward(accuracy) and sum of weighted episode logits.
-	* calculate policy loss and entropy with logits and weighted logits probabilities which gathered through batches. 
-	* clear gradients
-	* backpropagation
-	* update the parameters
-	* list avarge total rewards and entropy for each epoch
+	* Aim of this policy try to find best hyperparameters for a CNN model
+	* Controller agent builds hyperparameters with probabilty p, to train CNN model. 
+	* Accuracy value of CNN model is a reward for the controller, it is optimized to generate .	
+* __model.py__ 
+	* Includes a CNN model which applies 2D convolution over the input.
+	* Returns forward pass output. 
+* __controller.py__
+	* Controller agent creates hyperparameters for CNN, has Long Short-Term Memory (LSTM) network.
 * __train.py__
-	* includes parameters # of epochs, learning rate, batch size, # of hiden nodes etc.
-	* downloads train and test dataset, and passes it with the config parameters to the model.
+	* Includes hyperparameters # of epochs, learning rate, batch size, # of hiden nodes etc.
+	* Downloads train and test dataset, and passes it with the config parameters to the model.
 
 
 ## Training
 
+Agent is a Neural Architecture Search cell, creates each epoch logits to configure CNN model architecture. Action tensor generated from pre-defined action space. In this solution, the agent predicts kernels, filters and paddings parameters of the CNN model. </ br> 
+After training and evaluating CNN model, accuracy and entropy are calculated for optimize the agent. The agent gets accuracy value as a reward, thus it picks more accurate actions form action space. </br></br>   
 To train the model in the paper, run this command:
 
 ```train
-python train.py --input-data <path_to_data> --alfa 5 --beta 20
+python train.py 
+--use_cuda: True/False, default is False
+--mode: (generate/evaluate), default is generate
+--dataset: default is MNIST
 ```
-
->📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
-
-## Evaluation
-
-To evaluate my model on MiniImageNet, run:
-
-```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
-```
-
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
-
 
 ## Results
 
