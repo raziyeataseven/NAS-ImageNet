@@ -1,8 +1,7 @@
 # Neural Architecture Search with Reinforcement Learning
 
-This repository is the official implementation of [My Paper Title](https://arxiv.org/pdf/1611.01578v2.pdf). 
+This repository is the official implementation of [NEURAL ARCHITECTURE SEARCH WITH REINFORCEMENT LEARNING](https://arxiv.org/pdf/1611.01578v2.pdf). 
 
->📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 
 ## Requirements
 
@@ -12,21 +11,45 @@ To install requirements:
 pip install -r requirements.txt
 ```
 
->📋  Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
+## Data
+
+>Some information about the data and where to get...
+
+## Project files
+
+* __model.py__
+	* includes a CNN model which applies 2D convolution over the input.
+	* returns forward pass output. 
+* __controller.py__
+	* this file has the Agent which is driven by a neural network architecture.
+	* agent has Long Short-Term Memory (LSTM) network. 
+* __policy_gradient.py__
+	* Aim of this policy build the Convulutional Neural Network model and compare the results with Reinforcement Learning algorithm 
+	* CNN model trainded through play_episode method; during the training 
+	* play_episode method retuns episode logits from Agent, reward(accuracy) and sum of weighted episode logits.
+	* calculate policy loss and entropy with logits and weighted logits probabilities which gathered through batches. 
+	* clear gradients
+	* backpropagation
+	* update the parameters
+	* list avarge total rewards and entropy for each epoch
+* __train.py__
+	* includes parameters # of epochs, learning rate, batch size, # of hiden nodes etc.
+	* downloads train and test dataset, and passes it with the config parameters to the model.
+
 
 ## Training
 
-To train the model(s) in the paper, run this command:
+To train the model in the paper, run this command:
 
 ```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
+python train.py --input-data <path_to_data> --alfa 5 --beta 20
 ```
 
 >📋  Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
 
 ## Evaluation
 
-To evaluate my model on ImageNet, run:
+To evaluate my model on MiniImageNet, run:
 
 ```eval
 python eval.py --model-file mymodel.pth --benchmark imagenet
@@ -34,13 +57,6 @@ python eval.py --model-file mymodel.pth --benchmark imagenet
 
 >📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
 
-## Pre-trained Models
-
-You can download pretrained models here:
-
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
-
->📋  Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
 
 ## Results
 

@@ -13,7 +13,7 @@ parser.add_argument('--use_cuda', help='use GPU')
 class Params:
     NUM_EPOCHS = 5
     ALPHA = 5e-3        # learning rate
-    BATCH_SIZE = 3     # how many episodes we want to pack into an epoch
+    BATCH_SIZE = 3      # how many episodes we want to pack into an epoch
     HIDDEN_SIZE = 64    # number of hidden nodes we have in our cnn
     BETA = 0.1          # the entropy bonus multiplier
     INPUT_SIZE = 3
@@ -30,9 +30,7 @@ def main():
     # transform = transforms.Compose(
     #     [transforms.ToTensor(),
     #      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
-    transform = transforms.Compose(
-        [transforms.ToTensor(),
-        transforms.Normalize((0.5,), (0.5,))])     
+    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])     
 
     trainset = torchvision.datasets.MNIST(root='./data', train=True,
                                             download=True, transform=transform)
@@ -60,5 +58,5 @@ def main():
     policy_gradient.solve_environment()
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

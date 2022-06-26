@@ -1,0 +1,11 @@
+ipython @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_2ff86d21-7133-4fee-b3b2-6349ba52809eua87k1km/croots/recipe/ipython_1651600160735/work
+matplotlib-inline @ file:///tmp/build/80754af9/matplotlib-inline_1628242447089/work
+numpy @ file:///opt/concourse/worker/volumes/live/43e8b7ef-d1fd-45d0-62f1-c322c85dc996/volume/numpy_and_numpy_base_1650959338352/work
+Pillow==9.1.0
+pygraphviz @ file:///Users/runner/miniforge3/conda-bld/pygraphviz_1614704084783/work
+tensorboard==2.9.0
+tensorboard-data-server==0.6.1
+tensorboard-plugin-wit==1.8.1
+tensorboardX==2.5
+torch==1.11.0
+torchvision==0.12.0
