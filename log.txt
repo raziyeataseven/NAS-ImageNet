@@ -1,0 +1,34 @@
+Action Space:  tensor([ 5, 16,  0,  7, 16,  1]), last_reward:  98.78
+Action Space:  tensor([ 3, 16,  0,  3, 32,  2]), last_reward:  98.59
+Action Space:  tensor([ 7,  8,  0,  3, 32,  0]), last_reward:  99.1
+Action Space:  tensor([ 3, 16,  2,  7,  8,  2]), last_reward:  98.86
+Action Space:  tensor([ 5,  8,  1,  5, 32,  1]), last_reward:  99.14
+Action Space:  tensor([ 5, 16,  0,  3,  8,  2]), last_reward:  99.03
+Action Space:  tensor([ 5, 16,  2,  7,  8,  2]), last_reward:  98.94
+Action Space:  tensor([ 7, 16,  2,  3, 32,  2]), last_reward:  99.14
+Action Space:  tensor([ 7, 32,  0,  3, 32,  1]), last_reward:  99.0
+Action Space:  tensor([ 5, 32,  0,  5, 32,  2]), last_reward:  99.1
+Action Space:  tensor([ 7,  8,  2,  7, 16,  1]), last_reward:  99.04
+Action Space:  tensor([ 7, 16,  1,  5,  8,  2]), last_reward:  99.14
+Action Space:  tensor([ 3, 16,  0,  7, 32,  0]), last_reward:  99.02
+Action Space:  tensor([ 3, 16,  2,  3, 32,  0]), last_reward:  98.87
+Action Space:  tensor([ 5,  8,  0,  3, 16,  0]), last_reward:  98.98
+Action Space:  tensor([ 5,  8,  1,  3, 16,  2]), last_reward:  99.02
+Action Space:  tensor([ 3,  8,  1,  7, 32,  1]), last_reward:  99.02
+Action Space:  tensor([ 3,  8,  1,  3, 32,  1]), last_reward:  98.87
+Action Space:  tensor([ 5, 32,  0,  3, 16,  2]), last_reward:  99.1
+Action Space:  tensor([7, 8, 1, 7, 8, 2]), last_reward:  98.92
+Action Space:  tensor([ 5, 32,  2,  5, 32,  0]), last_reward:  99.0
+Action Space:  tensor([ 3, 16,  1,  7, 32,  1]), last_reward:  98.98
+Action Space:  tensor([ 3, 32,  1,  7, 16,  1]), last_reward:  98.92
+Action Space:  tensor([ 5, 32,  1,  3, 32,  2]), last_reward:  99.21
+Action Space:  tensor([ 5,  8,  1,  7, 16,  0]), last_reward:  98.8
+Action Space:  tensor([3, 8, 1, 7, 8, 2]), last_reward:  98.9
+Action Space:  tensor([ 5,  8,  0,  3, 32,  2]), last_reward:  99.1
+Action Space:  tensor([ 3, 16,  1,  3, 16,  1]), last_reward:  99.03
+Action Space:  tensor([ 5, 16,  0,  7,  8,  1]), last_reward:  99.07
+Action Space:  tensor([ 5, 16,  1,  5, 32,  0]), last_reward:  99.06
+Action Space:  tensor([ 5, 16,  2,  7, 16,  0]), last_reward:  99.0
+Action Space:  tensor([ 3, 32,  1,  7, 32,  1]), last_reward:  98.96
+Action Space:  tensor([ 5, 32,  1,  5,  8,  0]), last_reward:  99.1
+Action Space:  tensor([3, 8, 0, 5, 8, 0]), last_reward:  98.72

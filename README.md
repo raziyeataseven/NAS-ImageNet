@@ -16,22 +16,16 @@ pip install -r requirements.txt
 >Some information about the data and where to get...
 
 ## Project files
-
-* __model.py__
+ 
+* __policy_gradient.py__
+	* Aim of this policy try to find best hyperparameters for a CNN model
+	* Controller agent builds hyperparameters with probabilty p, to train CNN model. 
+	* Accuracy value of CNN model is a reward for the controller, it is optimized to generate .	
+* __model.py__ 
 	* Includes a CNN model which applies 2D convolution over the input.
 	* Returns forward pass output. 
 * __controller.py__
-	* The Agent which is driven by a neural network architecture.
-	* Agent has Long Short-Term Memory (LSTM) network. 
-* __policy_gradient.py__
-	* Aim of this policy build the Convulutional Neural Network model and compare the results with Reinforcement Learning algorithm 
-	* CNN model trainded through play_episode method
-	* Play_episode method retuns episode logits from Agent, reward(accuracy) and sum of weighted episode logits.
-	* Calculate_loss method calculates and returns policy loss and entropy with logits and weighted logits probabilities within the epoches. 
-	* Clearing gradients
-	* Backpropagation
-	* Update the parameters
-	* List avarge total rewards and entropy for each epoch
+	* Controller agent creates hyperparameters for CNN, has Long Short-Term Memory (LSTM) network.
 * __train.py__
 	* Includes hyperparameters # of epochs, learning rate, batch size, # of hiden nodes etc.
 	* Downloads train and test dataset, and passes it with the config parameters to the model.
@@ -39,10 +33,15 @@ pip install -r requirements.txt
 
 ## Training
 
-Hyperparameters are defined within the config. To train the model in the paper, run this command:
+Agent is a Neural Architecture Search cell, creates each epoch logits to configure CNN model architecture. Action tensor generated from pre-defined action space. In this solution, the agent predicts kernels, filters and paddings parameters of the CNN model. </ br> 
+After training and evaluating CNN model, accuracy and entropy are calculated for optimize the agent. The agent gets accuracy value as a reward, thus it picks more accurate actions form action space. </br></br>   
+To train the model in the paper, run this command:
 
 ```train
-python train.py
+python train.py 
+--use_cuda: True/False, default is False
+--mode: (generate/evaluate), default is generate
+--dataset: default is MNIST
 ```
 
 ## Results
